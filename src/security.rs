@@ -2,7 +2,7 @@ use std::fmt::{Display, Debug};
 
 use smol_str::SmolStr;
 
-#[derive(Debug, Hash, PartialEq, Eq, PartialOrd, Ord)]
+#[derive(Debug, Clone, Hash, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Identifier {
     /// Market Identification Code
     mic: SmolStr,
