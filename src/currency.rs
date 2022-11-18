@@ -1,11 +1,11 @@
-use std::fmt::{Display, Debug};
+use std::fmt::{Debug, Display};
 
 use smol_str::SmolStr;
 
 #[derive(Debug, Clone, Hash, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Pair {
     base: SmolStr,
-    quote: SmolStr
+    quote: SmolStr,
 }
 
 impl Display for Pair {
@@ -15,26 +15,30 @@ impl Display for Pair {
 }
 
 impl Pair {
-    pub fn new<S>(base: S, quote: S) -> Self 
-    where S: Into<SmolStr> {
+    pub fn new<S>(base: S, quote: S) -> Self
+    where
+        S: Into<SmolStr>,
+    {
         Self {
             base: base.into(),
             quote: quote.into(),
         }
     }
 
-    #[must_use] pub fn base(&self) -> &SmolStr {
+    #[must_use]
+    pub fn base(&self) -> &SmolStr {
         &self.base
     }
 
-    #[must_use] pub fn quote(&self) -> &SmolStr {
+    #[must_use]
+    pub fn quote(&self) -> &SmolStr {
         &self.quote
     }
 }
 
 #[cfg(test)]
 mod test {
-    use std::collections::{HashSet, BTreeSet};
+    use std::collections::{BTreeSet, HashSet};
 
     use super::Pair;
 

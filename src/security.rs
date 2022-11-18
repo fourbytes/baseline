@@ -1,4 +1,4 @@
-use std::fmt::{Display, Debug};
+use std::fmt::{Debug, Display};
 
 use smol_str::SmolStr;
 
@@ -8,7 +8,7 @@ pub struct Identifier {
     mic: SmolStr,
 
     /// Ticker Symbol
-    symbol: SmolStr
+    symbol: SmolStr,
 }
 
 impl Display for Identifier {
@@ -19,25 +19,29 @@ impl Display for Identifier {
 
 impl Identifier {
     pub fn new<S>(mic: S, symbol: S) -> Self
-    where S: Into<SmolStr> {
+    where
+        S: Into<SmolStr>,
+    {
         Self {
             mic: mic.into(),
             symbol: symbol.into(),
         }
     }
 
-    #[must_use] pub fn mic(&self) -> &SmolStr {
+    #[must_use]
+    pub fn mic(&self) -> &SmolStr {
         &self.mic
     }
 
-    #[must_use] pub fn symbol(&self) -> &SmolStr {
+    #[must_use]
+    pub fn symbol(&self) -> &SmolStr {
         &self.symbol
     }
 }
 
 #[cfg(test)]
 mod test {
-    use std::collections::{HashSet, BTreeSet};
+    use std::collections::{BTreeSet, HashSet};
 
     use super::Identifier;
 
