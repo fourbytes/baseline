@@ -11,3 +11,5 @@ repository = "https://github.com/fourbytes/baseline/"
 
 [dependencies]
 smol_str = "0.1"
+rust_decimal = "1"
+rust_decimal_macros = "1"

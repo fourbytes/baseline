@@ -23,11 +23,11 @@ impl Pair {
         }
     }
 
-    pub fn base(&self) -> &SmolStr {
+    #[must_use] pub fn base(&self) -> &SmolStr {
         &self.base
     }
 
-    pub fn quote(&self) -> &SmolStr {
+    #[must_use] pub fn quote(&self) -> &SmolStr {
         &self.quote
     }
 }

@@ -26,11 +26,11 @@ impl Identifier {
         }
     }
 
-    pub fn mic(&self) -> &SmolStr {
+    #[must_use] pub fn mic(&self) -> &SmolStr {
         &self.mic
     }
 
-    pub fn symbol(&self) -> &SmolStr {
+    #[must_use] pub fn symbol(&self) -> &SmolStr {
         &self.symbol
     }
 }
