@@ -1,0 +1,13 @@
+[package]
+name = "baseline"
+description = "Common types and traits for dealing with financial data"
+version = "0.1.0"
+edition = "2021"
+license = "LGPL-3.0-only"
+readme = "README.md"
+repository = "https://github.com/fourbytes/baseline/"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+smol_str = "0.1"
