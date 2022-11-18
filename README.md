@@ -8,6 +8,7 @@ Baseline is a Rust crate providing common types and traits for dealing with fina
 The crate is in early stages and the API is **not** yet stable.
 
 Current types include:
- - `security::Identifier { mic, symbol }`
- - `currency::Pair { base, quote }`
+ - `struct security::Identifier { mic, symbol }`
+ - `struct currency::Pair { base, quote }`
+ - `trait OHLC`
 
