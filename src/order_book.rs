@@ -1,7 +1,9 @@
 use smol_str::SmolStr;
 use time::OffsetDateTime;
 
-#[derive(Debug, Clone)]
+use crate::quote::TopOfBook;
+
+#[derive(Debug, Clone, Default)]
 pub struct OrderBook<O> where O: Order {
     pub bids: Vec<O>,
     pub asks: Vec<O>,
@@ -62,7 +64,27 @@ impl<O: Order> OrderBook<O> {
             Operation::Remove => {
                 orders.remove(index);
             }
-        }
+        };
     }
 }
 
+impl<O: Order> TopOfBook for OrderBook<O> {
+    type Price = O::Price;
+    type Volume = O::Volume;
+
+    fn bid_price(&self) -> Option<Self::Price> {
+        self.bids.get(0).map(Order::price)
+    }
+
+    fn bid_volume(&self) -> Option<Self::Volume> {
+        self.bids.get(0).map(Order::volume)
+    }
+
+    fn ask_price(&self) -> Option<Self::Price> {
+        self.asks.get(0).map(Order::price)
+    }
+
+    fn ask_volume(&self) -> Option<Self::Volume> {
+        self.asks.get(0).map(Order::volume)
+    }
+}
