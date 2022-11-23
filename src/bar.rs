@@ -10,30 +10,36 @@ pub trait OHLC {
     fn close(&self) -> Self::Type;
 }
 
-impl dyn OHLC<Type = Decimal> {
-    pub fn ohlc4(&self) -> Decimal {
+pub trait OHLCMath: OHLC {
+    fn ohlc4(&self) -> Self::Type;
+    fn hlc3(&self) -> Self::Type;
+    fn hl2(&self) -> Self::Type;
+}
+
+impl OHLCMath for dyn OHLC<Type = Decimal> {
+    fn ohlc4(&self) -> Decimal {
         (self.open() + self.high() + self.low() + self.close()) / dec!(4)
     }
 
-    pub fn hlc3(&self) -> Decimal {
+    fn hlc3(&self) -> Decimal {
         (self.high() + self.low() + self.close()) / dec!(3)
     }
 
-    pub fn hl2(&self) -> Decimal {
+    fn hl2(&self) -> Decimal {
         (self.high() + self.low()) / dec!(2)
     }
 }
 
-impl dyn OHLC<Type = f64> {
-    pub fn ohlc4(&self) -> f64 {
+impl OHLCMath for dyn OHLC<Type = f64> {
+    fn ohlc4(&self) -> f64 {
         (self.open() + self.high() + self.low() + self.close()) / 4.0
     }
 
-    pub fn hlc3(&self) -> f64 {
+    fn hlc3(&self) -> f64 {
         (self.high() + self.low() + self.close()) / 3.0
     }
 
-    pub fn hl2(&self) -> f64 {
+    fn hl2(&self) -> f64 {
         (self.high() + self.low()) / 2.0
     }
 }
