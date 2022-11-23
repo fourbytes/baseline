@@ -11,4 +11,6 @@ Current types include:
  - `struct security::Identifier { mic, symbol }`
  - `struct currency::Pair { base, quote }`
  - `trait OHLC`
+ - `struct OrderBook<O: Order>`
+ - `trait order_book::Order`
 
