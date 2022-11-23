@@ -18,7 +18,7 @@ The crate is in early stages and the API is **not** yet stable.
 Current types include:
  - `struct security::Identifier { mic, symbol }`
  - `struct currency::Pair { base, quote }`
- - `trait OHLC`
+ - `trait bar::OHLC + bar::Volume`
  - `struct OrderBook<O: Order>`
  - `trait order_book::Order`
 

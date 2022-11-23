@@ -24,6 +24,20 @@ impl dyn OHLC<Type = Decimal> {
     }
 }
 
+impl dyn OHLC<Type = f64> {
+    pub fn ohlc4(&self) -> f64 {
+        (self.open() + self.high() + self.low() + self.close()) / 4.0
+    }
+
+    pub fn hlc3(&self) -> f64 {
+        (self.high() + self.low() + self.close()) / 3.0
+    }
+
+    pub fn hl2(&self) -> f64 {
+        (self.high() + self.low()) / 2.0
+    }
+}
+
 pub trait Volume {
     type Type;
 
