@@ -1,7 +1,7 @@
 [package]
 name = "baseline"
 description = "Common types and traits for dealing with financial data"
-version = "0.1.3"
+version = "0.1.4"
 edition = "2021"
 license = "LGPL-3.0-only"
 readme = "README.md"
@@ -15,3 +15,4 @@ categories = ["data-structures"]
 smol_str = "0.1"
 rust_decimal = "1"
 rust_decimal_macros = "1"
+time = "0.3"
