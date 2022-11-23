@@ -1,5 +1,13 @@
-# Baseline
-[![MIT](https://img.shields.io/crates/l/baseline?style=for-the-badge)](https://choosealicense.com/licenses/lgpl-3.0/) [![Crates.io](https://img.shields.io/crates/v/baseline?style=for-the-badge)](https://crates.io/crates/baseline) [![docs.rs](https://img.shields.io/badge/docs.rs-baseline-rs?style=for-the-badge)](https://docs.rs/baseline)
+<h1 align="center">Baseline</h1>
+<p align="center">
+	<a href="https://crates.io/crates/baseline">
+		<img src="https://img.shields.io/crates/v/baseline" />
+    </a>
+	<a href="https://docs.rs/baseline">
+		<img src="https://img.shields.io/badge/docs.rs-baseline-rs" />
+    </a>
+	<img src="https://img.shields.io/crates/l/baseline" />
+</p>
 
 ## Overview
 Baseline is a Rust crate providing common types and traits for dealing with financial data.
