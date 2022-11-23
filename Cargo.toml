@@ -1,7 +1,7 @@
 [package]
 name = "baseline"
 description = "Common types and traits for dealing with financial data"
-version = "0.1.4"
+version = "0.2.0-alpha.1"
 edition = "2021"
 license = "LGPL-3.0-only"
 readme = "README.md"
